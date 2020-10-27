@@ -52,7 +52,7 @@ export class App extends Component {
       }
       else{
          console.log(this.state)
-        axios.post('http://localhost:5000/api/submit',{
+        axios.post('https://backend-class-book.herokuapp.com/api/submit',{
             pName:this.state.pName,
             cName:this.state.cName,
             cAge:this.state.cAge,
