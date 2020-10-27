@@ -70,7 +70,6 @@ export class App extends Component {
                 cAge:"",
                 slot:"",
                 course:"",
-                courseData:[],
                 error:{
                  pName:{
                      error:false,
