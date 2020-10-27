@@ -101,21 +101,11 @@ export class App extends Component {
       }
     }
     validEmail=()=>{
-      var reg = /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;
+    //   var reg = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
       if(this.state.Email===""){
           let x=this.state.error
           x.email={
               errorMsg:"Email should not be empty",
-              error:true
-          }
-          this.setState({
-              error:x
-          })
-      }
-      else if(reg.test(this.state.Email)===false){
-          let x=this.state.error
-          x.email={
-              errorMsg:"Not a valid Email",
               error:true
           }
           this.setState({
@@ -270,7 +260,7 @@ export class App extends Component {
                 color:"red"
                 }}>{this.state.error.contact.errorMsg}</p>:null}
                 <div className="form-group">
-                    <input type="text" name="Email" onBlur={this.validEmail} onChange={this.handle} className="form-control rounded-pill form-control-lg" value={this.state.Email} placeholder="Parent's Email Id" />
+                    <input type="email" name="Email" onBlur={this.validEmail} onChange={this.handle} className="form-control rounded-pill form-control-lg" value={this.state.Email} placeholder="Parent's Email Id" />
                 </div>
                 {this.state.error.email.error?<p style={{
                 color:"red"
